@@ -1,12 +1,617 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Carga de entregas finales | Planes de Transformación Digital</title><style>:root{--azul:#00AEEF;--azul-oscuro:#0078B8;--azul-suave:#EAF8FE;--gris-fondo:#ECECEC;--gris-linea:#D9D9D9;--texto:#222;--sombra:0 10px 30px rgba(0,0,0,.10)}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--texto);background:var(--gris-fondo)}.hero{background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.82)),url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;min-height:42vh;display:flex;align-items:flex-end;border-bottom:1px solid var(--gris-linea)}.hero-inner{width:min(960px,94%);margin:0 auto;padding:48px 0 36px}.hero-kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.10em;color:var(--azul-oscuro);font-weight:800;margin-bottom:14px}h1{margin:0 0 14px;font-size:2.7rem;line-height:1.02;color:var(--azul);font-weight:900}.hero p{max-width:840px;color:#4D4D4D;font-size:1.05rem;line-height:1.65}.topbar{background:#fff;border-bottom:1px solid var(--gris-linea)}.topbar-inner{width:min(960px,94%);margin:0 auto;padding:14px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}.nav-btn{display:inline-block;text-decoration:none;background:#F2F2F2;padding:10px 14px;font-size:.9rem;font-weight:700;color:#333;border:1px solid #E2E2E2}.layout{width:min(960px,94%);margin:26px auto 50px}.panel{background:#fff;border:1px solid var(--gris-linea);box-shadow:var(--sombra)}.panel-header{padding:18px 22px;border-bottom:1px solid #E7E7E7;background:#FAFAFA}.panel-header h2{margin:0;font-size:1.08rem}.panel-body{padding:22px}.nota{background:var(--azul-suave);border-left:5px solid var(--azul);padding:14px 16px;font-size:.94rem;line-height:1.65;color:#3F5560;margin-bottom:20px}.consigna{background:#fff;border:1px solid #E7E7E7;border-top:5px solid var(--azul);padding:16px 18px;margin-bottom:20px;line-height:1.7;color:#3f4c56}.bloque-suave{background:#FAFAFA;border:1px solid #E7E7E7;padding:16px;margin-bottom:18px}.bloque-suave h3{margin:0 0 10px;font-size:.96rem}.campo{margin-bottom:16px}.campo label{display:block;margin-bottom:6px;font-size:.93rem;font-weight:800}.campo input,.campo textarea{width:100%;border:1px solid #CCC;background:#fff;padding:12px 13px;font-size:.95rem;font-family:Arial,Helvetica,sans-serif}.campo textarea{min-height:112px;resize:vertical;line-height:1.55}.campo textarea.alto{min-height:150px}.ayuda{font-size:.82rem;line-height:1.45;color:#666;margin-top:5px}.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}button{border:none;padding:12px 16px;font-size:.92rem;font-weight:800;cursor:pointer}.primario{background:var(--azul);color:#fff}.secundario{background:#ECECEC;color:#333}.estado{display:none;margin-top:16px;padding:14px 16px;border-left:5px solid var(--azul);background:#eefaff;line-height:1.55}.error-config{margin-bottom:16px;padding:14px 16px;border-left:5px solid #b00020;background:#fff2f4;color:#68131f;line-height:1.55}</style></head><body>
-<section class="hero"><div class="hero-inner"><div class="hero-kicker">Segunda instancia del trabajo académico</div><h1>Carga de entregas finales</h1><p>La entrega final está destinada al desarrollo del Plan de Transformación Digital con Tecnologías Habilitadoras.</p></div></section>
-<div class="topbar"><div class="topbar-inner"><strong>Libro digital · Carga de entregas finales</strong><nav><a href="index.html" class="nav-btn">Inicio</a><a href="carga.html" class="nav-btn">Cargar preentrega</a><a href="libro.html" class="nav-btn">Ver libro</a></nav></div></div>
-<main class="layout"><section class="panel"><div class="panel-header"><h2>Carga de entregas finales</h2></div><div class="panel-body"><div id="configAviso" class="error-config" style="display:none;">Falta configurar la URL del Web App de Google Apps Script en este archivo.</div>
-<div class="nota">Cada trabajo incorpora dos instancias diferenciadas: una <strong>preentrega</strong>, centrada en la delimitación del caso y del problema, y una <strong>entrega final</strong>, destinada al desarrollo del Plan de Transformación Digital con Tecnologías Habilitadoras.</div>
-<div class="consigna">El trabajo final consistirá en la elaboración de un <strong>Plan de Transformación Digital con Tecnologías Habilitadoras</strong>, aplicado a una organización real o hipotética. La propuesta deberá incorporar al menos una tecnología disruptiva —IA, IoT o Industria 4.0— para optimizar un área clave de la organización, como marketing, operaciones o finanzas. Se espera que el trabajo describa la organización y el área seleccionada, identifique una problemática o una oportunidad de mejora, presente una propuesta de intervención fundamentada en los contenidos de la materia y desarrolle su potencial de valor, así como los principales requerimientos de inversión y gestión para su implementación.</div>
-<form id="formPlan" method="POST" target="envioOculto"><input type="hidden" name="instancia" value="final"/>
-<div class="bloque-suave"><h3>Datos generales del trabajo</h3><div class="campo"><label for="autor">Autor/a o integrantes del equipo</label><input type="text" id="autor" name="autor" required placeholder="Nombre Apellido, Nombre Apellido"/><div class="ayuda">Si el trabajo es grupal, escriban los nombres y apellidos de todos/as los/as integrantes separados por coma.</div></div><div class="campo"><label for="correo">Correo electrónico de contacto</label><input type="email" id="correo" name="correo" multiple required placeholder="nombre@correo.com, otra.persona@correo.com"/><div class="ayuda">Si el trabajo es grupal, pueden ingresar más de un correo electrónico separado por coma.</div></div><div class="campo"><label for="titulo">Título del trabajo</label><input type="text" id="titulo" name="titulo" required/></div><div class="campo"><label for="organizacion">Emprendimiento</label><input type="text" id="organizacion" name="organizacion" required/></div><div class="campo"><label for="sector">Sector o rubro</label><input type="text" id="sector" name="sector"/></div><div class="campo"><label for="palabrasClave">Palabras clave</label><input type="text" id="palabrasClave" name="palabrasClave" placeholder="Separadas por comas"/></div></div>
-<div class="bloque-suave"><h3>Desarrollo de la entrega final</h3><div class="campo"><label for="final_titulo_definitivo">Título definitivo del trabajo</label><input type="text" id="final_titulo_definitivo" name="final_titulo_definitivo" required/></div><div class="campo"><label for="final_sintesis">Síntesis del caso y del problema</label><textarea id="final_sintesis" name="final_sintesis" required></textarea></div><div class="campo"><label for="final_tecnologia">Tecnología habilitadora seleccionada</label><textarea id="final_tecnologia" name="final_tecnologia" required></textarea><div class="ayuda">Indicar si se trabajará con IA, IoT, Industria 4.0 u otra tecnología habilitadora pertinente.</div></div><div class="campo"><label for="final_plan">Plan de Transformación Digital</label><textarea class="alto" id="final_plan" name="final_plan" required></textarea></div><div class="campo"><label for="final_justificacion">Justificación teórica</label><textarea id="final_justificacion" name="final_justificacion" required></textarea></div><div class="campo"><label for="final_valor">Potencial de valor</label><textarea id="final_valor" name="final_valor" required></textarea></div><div class="campo"><label for="final_requerimientos">Requerimientos de inversión y gestión</label><textarea id="final_requerimientos" name="final_requerimientos" required></textarea></div><div class="campo"><label for="final_conclusiones">Conclusiones</label><textarea id="final_conclusiones" name="final_conclusiones" required></textarea></div><div class="campo"><label for="final_bibliografia">Bibliografía final</label><textarea id="final_bibliografia" name="final_bibliografia" required></textarea></div></div>
-<div class="acciones"><button type="submit" class="primario" id="btnEnviar">Enviar entrega final</button><button type="button" class="secundario" id="btnLimpiar">Limpiar</button></div></form><div id="estado" class="estado"></div><iframe name="envioOculto" id="envioOculto" style="display:none;"></iframe></div></section></main>
-<script>const WEB_APP_URL="https://script.google.com/macros/s/AKfycbwq0eKhJNEngDG3DxagVBvmG3gzm2lHsWwNustO0d5fDTtd2Jf4mNNuwLCI3-ZpyPLh6A/exec";const form=document.getElementById("formPlan"),estado=document.getElementById("estado"),btnLimpiar=document.getElementById("btnLimpiar"),btnEnviar=document.getElementById("btnEnviar"),configAviso=document.getElementById("configAviso");if(!WEB_APP_URL||WEB_APP_URL.includes("PEGAR_ACA")){configAviso.style.display="block";btnEnviar.disabled=true;btnEnviar.style.opacity=".5";}else{form.action=WEB_APP_URL;}btnLimpiar.addEventListener("click",()=>form.reset());form.addEventListener("submit",function(){estado.style.display="block";estado.innerHTML="Enviando la entrega final. Esperá unos segundos...";btnEnviar.disabled=true;setTimeout(()=>{estado.innerHTML="La entrega final fue enviada. Podés abrir <a href='libro.html'>Ver libro</a> para visualizarla. Si no aparece de inmediato, actualizá la página del libro.";form.reset();btnEnviar.disabled=false;},2500);});</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carga de entregas finales | Planes de Transformación Digital</title>
+  <style>
+    :root{
+      --azul:#00AEEF;
+      --azul-oscuro:#0078B8;
+      --azul-suave:#EAF8FE;
+      --gris-fondo:#ECECEC;
+      --gris-linea:#D9D9D9;
+      --texto:#222;
+      --sombra:0 10px 30px rgba(0,0,0,.10);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      background:var(--gris-fondo);
+    }
+
+    .hero{
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.82)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      min-height:42vh;
+      display:flex;
+      align-items:flex-end;
+      border-bottom:1px solid var(--gris-linea);
+    }
+
+    .hero-inner{
+      width:min(960px,94%);
+      margin:0 auto;
+      padding:48px 0 36px;
+    }
+
+    .hero-kicker{
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      color:var(--azul-oscuro);
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:2.7rem;
+      line-height:1.02;
+      color:var(--azul);
+      font-weight:900;
+    }
+
+    .hero p{
+      max-width:840px;
+      color:#4D4D4D;
+      font-size:1.05rem;
+      line-height:1.65;
+    }
+
+    .topbar{
+      background:#fff;
+      border-bottom:1px solid var(--gris-linea);
+    }
+
+    .topbar-inner{
+      width:min(960px,94%);
+      margin:0 auto;
+      padding:14px 0;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#F2F2F2;
+      padding:10px 14px;
+      font-size:.9rem;
+      font-weight:700;
+      color:#333;
+      border:1px solid #E2E2E2;
+    }
+
+    .layout{
+      width:min(960px,94%);
+      margin:26px auto 50px;
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--gris-linea);
+      box-shadow:var(--sombra);
+    }
+
+    .panel-header{
+      padding:18px 22px;
+      border-bottom:1px solid #E7E7E7;
+      background:#FAFAFA;
+    }
+
+    .panel-header h2{
+      margin:0;
+      font-size:1.08rem;
+    }
+
+    .panel-body{
+      padding:22px;
+    }
+
+    .nota{
+      background:var(--azul-suave);
+      border-left:5px solid var(--azul);
+      padding:14px 16px;
+      font-size:.94rem;
+      line-height:1.65;
+      color:#3F5560;
+      margin-bottom:20px;
+    }
+
+    .consigna{
+      background:#fff;
+      border:1px solid #E7E7E7;
+      border-top:5px solid var(--azul);
+      padding:16px 18px;
+      margin-bottom:20px;
+      line-height:1.7;
+      color:#3f4c56;
+    }
+
+    .bloque-suave{
+      background:#FAFAFA;
+      border:1px solid #E7E7E7;
+      padding:16px;
+      margin-bottom:18px;
+    }
+
+    .bloque-suave h3{
+      margin:0 0 10px;
+      font-size:.96rem;
+    }
+
+    .campo{
+      margin-bottom:16px;
+    }
+
+    .campo label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:6px;
+      font-size:.93rem;
+      font-weight:800;
+    }
+
+    .campo input,
+    .campo textarea{
+      width:100%;
+      border:1px solid #CCC;
+      background:#fff;
+      padding:12px 13px;
+      font-size:.95rem;
+      font-family:Arial, Helvetica, sans-serif;
+      border-radius:0;
+    }
+
+    .campo textarea{
+      min-height:112px;
+      resize:vertical;
+      line-height:1.55;
+    }
+
+    .campo textarea.alto{
+      min-height:150px;
+    }
+
+    .ayuda{
+      font-size:.82rem;
+      line-height:1.45;
+      color:#666;
+      margin-top:5px;
+    }
+
+    .ayuda-desplegable{
+      display:inline-block;
+      position:relative;
+      margin:0;
+    }
+
+    .ayuda-desplegable summary{
+      list-style:none;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      background:var(--azul);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:.82rem;
+      font-weight:900;
+      cursor:pointer;
+      line-height:1;
+      box-shadow:0 5px 12px rgba(0,174,239,.22);
+    }
+
+    .ayuda-desplegable summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .ayuda-desplegable[open] summary{
+      background:var(--azul-oscuro);
+    }
+
+    .ayuda-desplegable .contenido-ayuda{
+      position:absolute;
+      z-index:20;
+      top:30px;
+      left:-8px;
+      width:min(520px, 82vw);
+      background:#fff;
+      border:1px solid #D7E1EA;
+      border-top:5px solid var(--azul);
+      padding:14px 16px;
+      box-shadow:0 14px 30px rgba(0,0,0,.16);
+      font-weight:400;
+      font-size:.88rem;
+      line-height:1.55;
+      color:#334e68;
+    }
+
+    .ayuda-desplegable .contenido-ayuda p{
+      margin:0 0 10px;
+    }
+
+    .ayuda-desplegable .contenido-ayuda p:last-child{
+      margin-bottom:0;
+    }
+
+    .ayuda-desplegable .contenido-ayuda ul,
+    .ayuda-desplegable .contenido-ayuda ol{
+      margin:8px 0 10px;
+      padding-left:20px;
+    }
+
+    .ayuda-desplegable .contenido-ayuda li{
+      margin-bottom:5px;
+    }
+
+    .ayuda-desplegable .contenido-ayuda .ejemplo{
+      background:#F6FBFE;
+      border-left:4px solid var(--azul);
+      padding:9px 10px;
+      margin-top:8px;
+      color:#284B5C;
+    }
+
+    .acciones{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    button{
+      border:none;
+      padding:12px 16px;
+      font-size:.92rem;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .primario{
+      background:var(--azul);
+      color:#fff;
+    }
+
+    .secundario{
+      background:#ECECEC;
+      color:#333;
+    }
+
+    .estado{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-left:5px solid var(--azul);
+      background:#eefaff;
+      line-height:1.55;
+    }
+
+    .error-config{
+      margin-bottom:16px;
+      padding:14px 16px;
+      border-left:5px solid #b00020;
+      background:#fff2f4;
+      color:#68131f;
+      line-height:1.55;
+    }
+
+    @media(max-width:700px){
+      h1{ font-size:2.1rem; }
+      .ayuda-desplegable .contenido-ayuda{
+        position:fixed;
+        left:4%;
+        top:18%;
+        width:92%;
+        max-height:70vh;
+        overflow:auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">Segunda instancia del trabajo académico</div>
+      <h1>Carga de entregas finales</h1>
+      <p>La entrega final está destinada al desarrollo del Plan de Transformación Digital con Tecnologías Habilitadoras.</p>
+    </div>
+  </section>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <strong>Libro digital · Carga de entregas finales</strong>
+      <nav>
+        <a href="index.html" class="nav-btn">Inicio</a>
+        <a href="carga.html" class="nav-btn">Cargar preentrega</a>
+        <a href="libro.html" class="nav-btn">Ver libro</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel-header"><h2>Carga de entregas finales</h2></div>
+      <div class="panel-body">
+        <div id="configAviso" class="error-config" style="display:none;">
+          Falta configurar la URL del Web App de Google Apps Script en este archivo.
+        </div>
+
+        <div class="nota">
+          Cada trabajo incorpora dos instancias diferenciadas: una <strong>preentrega</strong>, centrada en la delimitación del caso y del problema, y una <strong>entrega final</strong>, destinada al desarrollo del Plan de Transformación Digital con Tecnologías Habilitadoras.
+        </div>
+
+        <div class="consigna">
+          El trabajo final consistirá en la elaboración de un <strong>Plan de Transformación Digital con Tecnologías Habilitadoras</strong>, aplicado a una organización real o hipotética. La propuesta deberá incorporar al menos una tecnología disruptiva —IA, IoT o Industria 4.0— para optimizar un área clave de la organización, como marketing, operaciones o finanzas. Se espera que el trabajo describa la organización y el área seleccionada, identifique una problemática o una oportunidad de mejora, presente una propuesta de intervención fundamentada en los contenidos de la materia y desarrolle su potencial de valor, así como los principales requerimientos de inversión y gestión para su implementación.
+        </div>
+
+        <div class="nota">
+          Cada apartado cuenta con un signo de pregunta <strong>(?)</strong> que despliega orientaciones ampliadas para completar la entrega final.
+        </div>
+
+        <form id="formPlan" method="POST" target="envioOculto">
+          <input type="hidden" name="instancia" value="final" />
+
+          <div class="bloque-suave">
+            <h3>Datos generales del trabajo</h3>
+
+            <div class="campo">
+              <label for="autor">Autor/a o integrantes del equipo</label>
+              <input type="text" id="autor" name="autor" required placeholder="Nombre Apellido, Nombre Apellido" />
+              <div class="ayuda">Si el trabajo es grupal, escriban los nombres y apellidos de todos/as los/as integrantes separados por coma.</div>
+            </div>
+
+            <div class="campo">
+              <label for="correo">Correo electrónico de contacto</label>
+              <input type="email" id="correo" name="correo" multiple required placeholder="nombre@correo.com, otra.persona@correo.com" />
+              <div class="ayuda">Si el trabajo es grupal, pueden ingresar más de un correo electrónico separado por coma.</div>
+            </div>
+
+            <div class="campo"><label for="titulo">Título del trabajo</label><input type="text" id="titulo" name="titulo" required /></div>
+            <div class="campo"><label for="organizacion">Emprendimiento</label><input type="text" id="organizacion" name="organizacion" required /></div>
+            <div class="campo"><label for="sector">Sector o rubro</label><input type="text" id="sector" name="sector" /></div>
+            <div class="campo"><label for="palabrasClave">Palabras clave</label><input type="text" id="palabrasClave" name="palabrasClave" placeholder="Separadas por comas" /></div>
+          </div>
+
+          <div class="bloque-suave">
+            <h3>Desarrollo de la entrega final</h3>
+
+            <div class="campo">
+              <label for="final_titulo_definitivo">
+                Título definitivo del trabajo
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe expresar con claridad el tema central del plan. A diferencia del título inicial, debería anticipar la propuesta de transformación digital, el caso trabajado y la tecnología seleccionada.</p>
+                    <p>Conviene evitar títulos demasiado generales, como “Transformación digital en una empresa”, porque no permiten identificar el caso ni la intervención propuesta.</p>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> Implementación de un asistente conversacional con Inteligencia Artificial para fortalecer la gestión comercial de EcoTrama.</div>
+                  </div>
+                </details>
+              </label>
+              <input type="text" id="final_titulo_definitivo" name="final_titulo_definitivo" required />
+            </div>
+
+            <div class="campo">
+              <label for="final_sintesis">
+                Síntesis del caso y del problema
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe recuperar brevemente la organización o emprendimiento elegido, el área de intervención y el problema, necesidad u oportunidad de mejora detectada.</p>
+                    <p>No se trata de repetir toda la preentrega, sino de presentar una síntesis clara que permita entender:</p>
+                    <ul>
+                      <li>qué organización se analiza;</li>
+                      <li>en qué área se propone intervenir;</li>
+                      <li>cuál es el problema o la oportunidad;</li>
+                      <li>por qué resulta relevante abordarlo.</li>
+                    </ul>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> explicar que EcoTrama es un emprendimiento de indumentaria sustentable que vende por redes sociales y tiene dificultades para organizar consultas comerciales, responder con rapidez y dar seguimiento a potenciales clientes.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_sintesis" name="final_sintesis" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_tecnologia">
+                Tecnología habilitadora seleccionada
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe indicar qué tecnología se utilizará para el plan de transformación digital y justificar brevemente por qué resulta pertinente para el problema identificado.</p>
+                    <p>Puede ser, por ejemplo:</p>
+                    <ul>
+                      <li>Inteligencia Artificial;</li>
+                      <li>Internet de las Cosas;</li>
+                      <li>Industria 4.0;</li>
+                      <li>automatización de procesos;</li>
+                      <li>analítica de datos;</li>
+                      <li>plataformas digitales;</li>
+                      <li>sistemas integrados de gestión.</li>
+                    </ul>
+                    <p>No alcanza con nombrar la tecnología. Hay que explicar para qué se usaría y qué aspecto del problema permitiría abordar.</p>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> se selecciona Inteligencia Artificial mediante un asistente conversacional porque permitiría responder preguntas frecuentes, registrar consultas y mejorar el seguimiento comercial sin perder el vínculo personalizado con los clientes.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_tecnologia" name="final_tecnologia" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_plan">
+                Plan de Transformación Digital
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Esta es la sección central del trabajo. Debe presentar la propuesta de intervención de manera ordenada.</p>
+                    <p>Puede organizarse por etapas, líneas de acción o componentes. Lo importante es que se entienda cómo se pasaría del problema detectado a una solución posible.</p>
+                    <p>Debería incluir:</p>
+                    <ul>
+                      <li>acciones principales;</li>
+                      <li>etapas de implementación;</li>
+                      <li>recursos necesarios;</li>
+                      <li>cambios en los procesos de trabajo;</li>
+                      <li>responsables o áreas involucradas;</li>
+                      <li>tiempos estimados, si corresponde;</li>
+                      <li>modo en que se integraría la tecnología seleccionada.</li>
+                    </ul>
+                    <div class="ejemplo"><strong>Ejemplo de organización:</strong> relevamiento de consultas frecuentes; organización de información comercial; implementación de un asistente conversacional; integración con una base de datos de clientes; evaluación y mejora continua.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea class="alto" id="final_plan" name="final_plan" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_justificacion">
+                Justificación teórica
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe vincular la propuesta con los contenidos de la materia. Es decir, explicar por qué el plan tiene sentido desde una mirada conceptual y no solo práctica.</p>
+                    <p>Puede recuperar ideas sobre transformación digital, economía digital, tecnologías habilitadoras, plataformas, automatización, datos, innovación organizacional, modelos de negocio digitales, gestión del cambio y valor organizacional.</p>
+                    <p>La clave es que la propuesta no aparezca como una simple “herramienta tecnológica”, sino como una intervención fundamentada.</p>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> la incorporación de un asistente conversacional no se comprende solo como una automatización de respuestas, sino como parte de una estrategia orientada a reorganizar procesos comerciales, sistematizar datos y fortalecer la toma de decisiones.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_justificacion" name="final_justificacion" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_valor">
+                Potencial de valor
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe explicar qué valor podría generar el plan para la organización o emprendimiento.</p>
+                    <p>Puede incluir mejoras en atención al cliente, eficiencia operativa, reducción de tiempos, incremento de ventas, organización de la información, toma de decisiones, experiencia de usuario, diferenciación competitiva o escalabilidad del emprendimiento.</p>
+                    <p>Conviene que el potencial de valor esté conectado con el problema detectado.</p>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> si el problema era la pérdida de consultas comerciales, el valor esperado podría ser mejorar la respuesta, registrar clientes potenciales y aumentar la conversión de consultas en ventas.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_valor" name="final_valor" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_requerimientos">
+                Requerimientos de inversión y gestión
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe identificar qué necesita la organización para implementar el plan. No se refiere solo a dinero: también incluye tiempo, formación, organización interna, cambios en procesos y responsabilidades.</p>
+                    <p>Puede contemplar:</p>
+                    <ul>
+                      <li>herramientas o plataformas necesarias;</li>
+                      <li>costos de contratación o suscripción;</li>
+                      <li>capacitación del equipo;</li>
+                      <li>tiempo de implementación;</li>
+                      <li>responsables de seguimiento;</li>
+                      <li>actualización de información;</li>
+                      <li>criterios de supervisión;</li>
+                      <li>gestión de datos;</li>
+                      <li>condiciones éticas o legales.</li>
+                    </ul>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> seleccionar una herramienta de chatbot, cargar información sobre productos, definir criterios de derivación a atención humana, capacitar a las personas responsables y revisar periódicamente las respuestas generadas.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_requerimientos" name="final_requerimientos" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_conclusiones">
+                Conclusiones
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe cerrar el trabajo retomando el problema inicial y mostrando cómo el plan propuesto permite abordarlo.</p>
+                    <p>No debería ser un resumen mecánico. Conviene incluir una valoración final sobre la viabilidad, los aportes y los límites de la propuesta.</p>
+                    <p>Puede responder preguntas como:</p>
+                    <ul>
+                      <li>¿qué problema permite abordar el plan?</li>
+                      <li>¿qué mejora introduce la tecnología seleccionada?</li>
+                      <li>¿por qué la propuesta es viable?</li>
+                      <li>¿qué aspectos deberían cuidarse en la implementación?</li>
+                      <li>¿qué aprendizajes deja el recorrido desde la preentrega hasta la entrega final?</li>
+                    </ul>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> la propuesta permite pasar de una gestión comercial dispersa y manual a un esquema más organizado, disponible y basado en información.</div>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_conclusiones" name="final_conclusiones" required></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="final_bibliografia">
+                Bibliografía final
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Debe incluir las fuentes utilizadas para fundamentar el trabajo. A diferencia de la bibliografía inicial, esta versión debería estar más completa y ajustada al desarrollo final.</p>
+                    <p>Puede incluir bibliografía de la materia, informes institucionales, textos sobre transformación digital, materiales sobre la tecnología seleccionada y fuentes sobre el sector o rubro analizado.</p>
+                    <p>Conviene que esté presentada con un criterio uniforme, preferentemente en formato APA, y que solo incluya fuentes efectivamente utilizadas en el trabajo.</p>
+                  </div>
+                </details>
+              </label>
+              <textarea id="final_bibliografia" name="final_bibliografia" required></textarea>
+            </div>
+          </div>
+
+          <div class="acciones">
+            <button type="submit" class="primario" id="btnEnviar">Enviar entrega final</button>
+            <button type="button" class="secundario" id="btnLimpiar">Limpiar</button>
+          </div>
+        </form>
+
+        <div id="estado" class="estado"></div>
+        <iframe name="envioOculto" id="envioOculto" style="display:none;"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwq0eKhJNEngDG3DxagVBvmG3gzm2lHsWwNustO0d5fDTtd2Jf4mNNuwLCI3-ZpyPLh6A/exec";
+
+    const form = document.getElementById("formPlan");
+    const estado = document.getElementById("estado");
+    const btnLimpiar = document.getElementById("btnLimpiar");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const configAviso = document.getElementById("configAviso");
+
+    if(!WEB_APP_URL || WEB_APP_URL.includes("PEGAR_ACA")){
+      configAviso.style.display = "block";
+      btnEnviar.disabled = true;
+      btnEnviar.style.opacity = ".5";
+    }else{
+      form.action = WEB_APP_URL;
+    }
+
+    btnLimpiar.addEventListener("click", () => form.reset());
+
+    form.addEventListener("submit", function(){
+      estado.style.display = "block";
+      estado.innerHTML = "Enviando la entrega final. Esperá unos segundos...";
+      btnEnviar.disabled = true;
+
+      setTimeout(() => {
+        estado.innerHTML = "La entrega final fue enviada. Podés abrir <a href='libro.html'>Ver libro</a> para visualizarla. Si no aparece de inmediato, actualizá la página del libro.";
+        form.reset();
+        btnEnviar.disabled = false;
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
