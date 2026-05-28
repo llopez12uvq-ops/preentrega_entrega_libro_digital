@@ -378,7 +378,20 @@
               <div class="ayuda">Si el trabajo es grupal, pueden ingresar más de un correo electrónico separado por coma.</div>
             </div>
 
-            <div class="campo"><label for="titulo">Título del trabajo</label><input type="text" id="titulo" name="titulo" required /></div>
+            <div class="campo">
+              <label for="titulo">
+                Título del trabajo
+                <details class="ayuda-desplegable">
+                  <summary>?</summary>
+                  <div class="contenido-ayuda">
+                    <p>Indicar el título definitivo de la entrega final. Debe expresar con claridad el caso, la tecnología habilitadora seleccionada y el sentido general de la intervención.</p>
+                    <p>Conviene evitar títulos demasiado generales, como “Transformación digital en una empresa”, porque no permiten identificar el caso ni la propuesta desarrollada.</p>
+                    <div class="ejemplo"><strong>Ejemplo:</strong> Implementación de un asistente conversacional con Inteligencia Artificial para fortalecer la gestión comercial de EcoTrama.</div>
+                  </div>
+                </details>
+              </label>
+              <input type="text" id="titulo" name="titulo" required />
+            </div>
             <div class="campo"><label for="organizacion">Emprendimiento</label><input type="text" id="organizacion" name="organizacion" required /></div>
             <div class="campo"><label for="sector">Sector o rubro</label><input type="text" id="sector" name="sector" /></div>
             <div class="campo"><label for="palabrasClave">Palabras clave</label><input type="text" id="palabrasClave" name="palabrasClave" placeholder="Separadas por comas" /></div>
@@ -386,23 +399,7 @@
 
           <div class="bloque-suave">
             <h3>Desarrollo de la entrega final</h3>
-
-            <div class="campo">
-              <label for="final_titulo_definitivo">
-                Título definitivo del trabajo
-                <details class="ayuda-desplegable">
-                  <summary>?</summary>
-                  <div class="contenido-ayuda">
-                    <p>Debe expresar con claridad el tema central del plan. A diferencia del título inicial, debería anticipar la propuesta de transformación digital, el caso trabajado y la tecnología seleccionada.</p>
-                    <p>Conviene evitar títulos demasiado generales, como “Transformación digital en una empresa”, porque no permiten identificar el caso ni la intervención propuesta.</p>
-                    <div class="ejemplo"><strong>Ejemplo:</strong> Implementación de un asistente conversacional con Inteligencia Artificial para fortalecer la gestión comercial de EcoTrama.</div>
-                  </div>
-                </details>
-              </label>
-              <input type="text" id="final_titulo_definitivo" name="final_titulo_definitivo" required />
-            </div>
-
-            <div class="campo">
+<div class="campo">
               <label for="final_sintesis">
                 Síntesis del caso y del problema
                 <details class="ayuda-desplegable">
